@@ -13,7 +13,7 @@ const jwtMiddleware = (req,res,next)=>{
         const jwtResponse = jwt.verify(token,'supersecretKey')
         console.log(jwtResponse);
         req.payload = jwtResponse.userId 
-        next()
+        next();
     }catch (error){
         res.status(401).json('Authorization failed...please login', error)
     }

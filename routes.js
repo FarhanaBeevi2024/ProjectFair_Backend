@@ -35,5 +35,12 @@ router.get('/userProject',jwt, projectController.userProjectController)
 //delete
 router.delete('/delete/:id', projectController.deleteProjectController)
 
+
+//edit project
+router.put('/edit-project/:id',jwt,multerConfig.single('projImage'), projectController.editProjectController)
+
+//edit profile
+router.put('/edit-profile',jwt, multerConfig.single('profile'), userController.editProfileController)
+
 //4) export the router
 module.exports = router
